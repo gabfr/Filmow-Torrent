@@ -225,7 +225,7 @@ function FilmowTorrent() {
         $(movieListItemClass).each(function() {
             var myId = $(this).attr("id");
             myId = myId.slice(myId.indexOf("_id-")+4);
-            $(this).append(new searchTorrentLink(movieId).create());
+            $(this).append(new searchTorrentLink(myId).create());
         });
     };
     this.init = function() {
