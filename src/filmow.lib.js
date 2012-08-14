@@ -75,7 +75,7 @@ function torrentsLightbox(elementId) {
         "overflow": "auto",
         "z-index": "99999"
     };
-    this.closeBoxButton = "<a href='javascript:void(0);' onClick='$(this).parent().fadeOut();'><strong>FECHAR</strong></a>";
+    this.closeBoxButton = "<a href='javascript:void(0);' onClick='$(this).parent().fadeOut();' style='display: block'><strong>FECHAR</strong></a>";
     this.applyDefaultStyle = function() {
         if (!this.elementCreatedBefore()) {
             this.element.css(this.elementDefaultStyle);
@@ -148,8 +148,12 @@ function searchTorrentLink(movieId) {
             } else {
                 var torSearchDOM = $("<div />").html(data);
                 var tableSearchResult = torSearchDOM.find("#searchResult");
-                tableSearchResult.css("width", "100%");
-                torrentBox.setContent(tableSearchResult);
+                if (tableSearchResult.size() > 0) {
+                    tableSearchResult.css("width", "100%");
+                    torrentBox.setContent(tableSearchResult);
+                } else {
+                    torrentBox.setContent(torSearchDOM);
+                }
             }
             torrentBox.showTheBox();
         };
