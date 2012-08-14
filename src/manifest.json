@@ -1,0 +1,13 @@
+{
+  "name": "Filmow Torrents",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "The filmow torrents allow you to fetch movie torrents while navigating trough filmow.com",
+  "background": {
+      "scripts": ["chromeinject.js"]
+  },
+  "permissions": [
+    "http://*/*",
+    "tabs"
+  ]
+}
