@@ -146,7 +146,7 @@ function searchTorrentLink(movieId) {
             if (strstr(data, "No hits. Try adding an asterisk in you search phrase.")) {
                 torrentBox.setContent("Nothing found for '" + _this.movieName + "'. Maybe you should try other trackers? Perhaps isoHunt?");
             } else {
-                var torSearchDOM = $("<div />").html(data);
+                var torSearchDOM = $("<div />").html(data.replace("<script", "<scriptnowork"));
                 var tableSearchResult = torSearchDOM.find("#searchResult");
                 if (tableSearchResult.size() > 0) {
                     tableSearchResult.css("width", "100%");
